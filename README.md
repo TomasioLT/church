@@ -1,6 +1,6 @@
 # Githug Pages initial commit, creating:
 
-## Prepare in VScode before commiting to Github.
+Prepare in VScode before commiting to Github.
 
  ``` npm install gh-pages --save-dev ```
 
