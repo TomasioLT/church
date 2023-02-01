@@ -1,23 +1,24 @@
 import {
   Facebook,
-  Favorite,
   FavoriteBorderOutlined,
   Instagram,
   LocationCityOutlined,
-  Person,
   Person2Outlined,
   Telegram,
   YouTube,
 } from "@mui/icons-material";
 import {
   Button,
+  Chip,
   Divider,
   Grid,
+  ImageList,
+  ImageListItem,
+  ImageListItemBar,
   List,
   ListItemButton,
   ListItemIcon,
   ListItemText,
-  Paper,
   Typography,
 } from "@mui/material";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
@@ -25,6 +26,9 @@ import { Box } from "@mui/system";
 import React from "react";
 import VolunteerActivismOutlinedIcon from "@mui/icons-material/VolunteerActivismOutlined";
 import PeopleAltRoundedIcon from "@mui/icons-material/PeopleAltRounded";
+import mainPhoto from "../assets/home-photo.jpg";
+import imageMountain from "../assets/mountain.jpg";
+import imageCollage from "../assets/collage.webp";
 const Home = () => {
   return (
     <Box
@@ -34,7 +38,7 @@ const Home = () => {
         container
         alignItems="flex-start"
         justifyContent="center"
-        rowSpacing={1}
+        rowSpacing={3}
         columnSpacing={{ xs: 1, sm: 2, md: 3 }}
         width={{ xs: "90%", md: "65%" }}>
         <Grid
@@ -44,15 +48,47 @@ const Home = () => {
           alignItems="center"
           justifyContent="center"
           display="flex">
+          {/* Image on background Box */}
           <Box
-            component="img"
-            src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
             alt="main photo"
-            sx={{ height: "auto", width: "100%" }}
-          />
+            sx={{
+              backgroundImage: `url(${mainPhoto})`,
+              backgroundRepeat: "no-repeat",
+              color: "#f5f5f5",
+              backgroundSize: "cover",
+              height: "450px",
+              width: { xs: "100%", md: "80%" },
+              position: "relative",
+              borderRadius: "10px",
+            }}>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                position: "absolute",
+                alignItems: "flex-start",
+                gap: "10px",
+                bottom: 0,
+                m: 2,
+              }}>
+              <Chip
+                label="Latest sermon"
+                sx={{ color: "white", backgroundColor: "grey" }}
+              />
+              <Typography variant="h5">Don't Fight Your Future</Typography>
+              <Box sx={{ display: "flex", gap: "15px" }}>
+                <Button variant="contained">Watch Sermon</Button>
+                <Button
+                  variant="outlined"
+                  sx={{ color: "white", borderColor: "white" }}>
+                  View more Sermons
+                </Button>
+              </Box>
+            </Box>
+          </Box>
         </Grid>
         {/* LEft */}
-        <Grid container xs={12} md={8} direction="column">
+        <Grid container xs={12} md={8} direction="column" rowSpacing={3}>
           <Grid item xs={12}>
             <Typography variant="h5">Let’s tailor your experience.</Typography>
             <List>
@@ -78,27 +114,94 @@ const Home = () => {
           </Grid>
           <Grid item xs={12}>
             <Box
-              component="img"
-              src="https://images.unsplash.com/photo-1566378246598-5b11a0d486cc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80"
+              alt="mountain photo"
+              sx={{
+                backgroundImage: `url(${imageMountain})`,
+                backgroundRepeat: "no-repeat",
+                color: "#f5f5f5",
+                backgroundSize: "cover",
+                height: "350px",
+                width: "90%",
+                position: "relative",
+                borderRadius: "10px",
+              }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  position: "absolute",
+                  alignItems: "flex-start",
+                  gap: "10px",
+                  bottom: 0,
+                  m: 2,
+                }}>
+                <Typography variant="h5">
+                  A New eGroup Study from Holly Furtick
+                </Typography>
+                <Box sx={{ display: "flex", gap: "15px" }}>
+                  <Button
+                    variant="contained"
+                    sx={{ color: "black", backgroundColor: "white" }}>
+                    Lear More
+                  </Button>
+                </Box>
+              </Box>
+            </Box>
+          </Grid>
+          <Grid item xs={12}>
+            <Box
               alt="main photo"
-              sx={{ height: "50%", width: "90%" }}
-            />
+              sx={{
+                backgroundImage: `url(${imageCollage})`,
+                backgroundRepeat: "no-repeat",
+                color: "#f5f5f5",
+                backgroundSize: "cover",
+                height: "350px",
+                width: "90%",
+                position: "relative",
+                borderRadius: "10px",
+              }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  position: "absolute",
+                  alignItems: "flex-start",
+                  gap: "5px",
+                  bottom: 0,
+                  m: 2,
+                }}>
+                <Typography variant="h4">This is church. Anywhere.</Typography>
+                <Typography variant="h6">
+                  Join eFam all over the world for Elevation Church Online.
+                </Typography>
+                <Box sx={{ display: "flex", gap: "15px" }}>
+                  <Button
+                    variant="contained"
+                    sx={{ color: "black", backgroundColor: "white" }}>
+                    Watch Online
+                  </Button>
+                </Box>
+              </Box>
+            </Box>
           </Grid>
         </Grid>
         {/* Right */}
-        <Grid container xs={12} md={4}>
+        <Grid container xs={12} md={4} rowSpacing={5}>
           <Grid item xs={12}>
             <Typography variant="h6">Get Involved</Typography>
             <Typography variant="body2">
               See what God can do through you.
             </Typography>
             <List>
+              <Divider />
               <ListItemButton>
                 <ListItemIcon>
                   <VolunteerActivismOutlinedIcon />
                 </ListItemIcon>
                 <ListItemText primary="Giving" />
               </ListItemButton>
+
               <Divider />
               <ListItemButton>
                 <ListItemIcon>
@@ -106,30 +209,31 @@ const Home = () => {
                 </ListItemIcon>
                 <ListItemText primary="Groups" />
               </ListItemButton>
-              <Divider />
 
+              <Divider />
               <ListItemButton>
                 <ListItemIcon>
                   <PeopleAltRoundedIcon />
                 </ListItemIcon>
                 <ListItemText primary="Volunteer" />
               </ListItemButton>
-              <Divider />
 
+              <Divider />
               <ListItemButton>
                 <ListItemIcon>
                   <FavoriteBorderOutlined />
                 </ListItemIcon>
                 <ListItemText primary="Outreach" />
               </ListItemButton>
-              <Divider />
 
+              <Divider />
               <ListItemButton>
                 <ListItemIcon>
                   <LocationOnOutlinedIcon />
                 </ListItemIcon>
                 <ListItemText primary="eFam" />
               </ListItemButton>
+              <Divider />
             </List>
           </Grid>
           <Grid item xs={12}>
@@ -138,6 +242,8 @@ const Home = () => {
               See what God can do through your family.
             </Typography>
             <List>
+              <Divider />
+
               <ListItemButton>
                 <ListItemIcon>
                   <VolunteerActivismOutlinedIcon />
@@ -158,6 +264,8 @@ const Home = () => {
             <Typography variant="h6">Follow Elevation Church</Typography>
 
             <List>
+              <Divider />
+
               <ListItemButton>
                 <ListItemIcon>
                   <YouTube />

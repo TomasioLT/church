@@ -9,7 +9,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-import ChurchOutlinedIcon from "@mui/icons-material/ChurchOutlined";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import siteLogo from "../assets/site-logo.svg";
 import {
   Drawer,
   List,
@@ -17,8 +18,12 @@ import {
   ListItemIcon,
   ListItemText,
 } from "@mui/material";
-import { OutlinedFlag } from "@mui/icons-material";
+import { ArrowRight, OutlinedFlag } from "@mui/icons-material";
 
+const siteWidth = {
+  mobile: "90%",
+  dekstop: "65%",
+};
 const pages = [
   "Sermons",
   "Locations",
@@ -44,33 +49,32 @@ function Navbar() {
   const toggleDrawer = (event) => {
     setDrawerState(!drawerState);
   };
+  // Languages menu
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   return (
-    <Box>
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        boxShadow: 5,
+      }}>
       <AppBar position="static">
-        <Container maxWidth="xl">
-          <Toolbar disableGutters>
-            <ChurchOutlinedIcon
-              sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
-            />
-            <Typography
-              variant="h6"
-              // noWrap
-              component="a"
-              href="/"
-              sx={{
-                mr: 2,
-                display: { xs: "none", md: "flex" },
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: "inherit",
-                textDecoration: "none",
-              }}>
-              {siteTitle}
-            </Typography>
-
-            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+        <Container maxWidth="lg">
+          <Toolbar
+            disableGutters
+            sx={{ display: "flex", justifyContent: "space-between" }}>
+            {/* Mobile menu */}
+            <Box sx={{ display: { xs: "flex", md: "none" } }}>
+              {/* Display only for: Mobile Menu */}
               <IconButton
                 size="large"
                 aria-label="account of current user"
@@ -104,27 +108,14 @@ function Navbar() {
                 ))}
               </Menu>
             </Box>
-            <ChurchOutlinedIcon
-              sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
+            {/* Site Title + Logo */}
+            <img
+              src={siteLogo}
+              alt="logo"
+              style={{ width: "75px", height: "auto" }}
             />
-            <Typography
-              variant="h5"
-              noWrap
-              component="a"
-              href=""
-              sx={{
-                mr: 2,
-                display: { xs: "flex", md: "none" },
-                flexGrow: 1,
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: "inherit",
-                textDecoration: "none",
-              }}>
-              {siteTitle}
-            </Typography>
-            <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+            {/* Navbar menu links */}
+            <Box sx={{ display: { xs: "none", md: "flex" } }}>
               {pages.map((page) => (
                 <Button
                   key={page}
@@ -133,6 +124,32 @@ function Navbar() {
                   {page}
                 </Button>
               ))}
+            </Box>
+            <Box sx={{ display: "flex" }}>
+              <Button
+                id="basic-button"
+                aria-controls={open ? "basic-menu" : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? "true" : undefined}
+                onClick={handleClick}
+                color="error"
+                sx={{ color: "white" }}
+                endIcon={<ChevronRightIcon />}>
+                EN
+              </Button>
+              {/* Languages */}
+              <Menu
+                id="basic-menu"
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleClose}
+                MenuListProps={{
+                  "aria-labelledby": "basic-button",
+                }}>
+                <MenuItem onClick={handleClose}>English</MenuItem>
+                <MenuItem onClick={handleClose}>Lietuvių</MenuItem>
+                <MenuItem onClick={handleClose}>Русский</MenuItem>
+              </Menu>
             </Box>
           </Toolbar>
         </Container>

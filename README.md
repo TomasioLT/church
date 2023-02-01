@@ -6,25 +6,17 @@
 
 #### package.json:
 
-#### `"homepage": "tomasiolt.github.io/application"`
+`"homepage": "tomasiolt.github.io/application"`
 
-#### `"predeploy": ""npm run build"`
-
-#### `"homepage": ""gh-pages -d build"`
-
-#### `git init`
-
-#### `git status`
-
-#### `git add .`
-
-#### `git commit -m "initial commit"`
-
-#### `git branch -M main`
-
-#### `git remote add origin https://github.com/TomasioLT/application.git`
-
-#### `git push -u origin main`
+`"predeploy": ""npm run build"`
+`"homepage": ""gh-pages -d build"`
+`git init`
+`git status`
+`git add .`
+`git commit -m "initial commit"`
+`git branch -M main`
+`git remote add origin https://github.com/TomasioLT/application.git`
+`git push -u origin main`
 
 # Updating Github Pages // Re-Deploy.
 
