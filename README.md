@@ -10,9 +10,10 @@
 
 `"predeploy": ""npm run build"
 
- "homepage": ""gh-pages -d build"```
+ "homepage": ""gh-pages -d build" 
+ ```
 
- `git init`
+ s`git init`
 
  `git status`
 
