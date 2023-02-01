@@ -1,3 +1,39 @@
+# Githug Pages initial commit, creating:
+
+## Prepare in VScode before commiting to Github.
+
+#### `npm install gh-pages --save-dev`
+
+#### package.json:
+
+#### `"homepage": "tomasiolt.github.io/application"`
+
+#### `"predeploy": ""npm run build"`
+
+#### `"homepage": ""gh-pages -d build"`
+
+#### `git init`
+
+#### `git status`
+
+#### `git add .`
+
+#### `git commit -m "initial commit"`
+
+#### `git branch -M main`
+
+#### `git remote add origin https://github.com/TomasioLT/application.git`
+
+#### `git push -u origin main`
+
+# Updating Github Pages // Re-Deploy.
+
+#### `npm run deploy`
+
+#### `git add .`
+
+#### `git commit -m "update build for gh-pages"`
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
