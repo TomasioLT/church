@@ -16,9 +16,9 @@
  `git init`
 
  ` git status` 
- `` git add .`
+ ` git add .`
 
- ` git commit -m "initial commit"```
+ ` git commit -m "initial commit"`
 
  ` git branch -M main`
 
