@@ -31,11 +31,11 @@
  
 # Updating Github Pages // Re-Deploy.
 
-#### `npm run deploy`
+1. `npm run deploy`
 
-#### `git add .`
+2. `git add .`
 
-#### `git commit -m "update build for gh-pages"`
+3. `git commit -m "update build for gh-pages"`
 
 - - - -
 
