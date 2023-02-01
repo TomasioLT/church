@@ -156,12 +156,14 @@ function Navbar() {
       </AppBar>
       <Drawer anchor="left" open={drawerState} onClose={toggleDrawer}>
         <List>
-          <ListItemButton>
-            <ListItemIcon>
-              <OutlinedFlag />
-            </ListItemIcon>
-            <ListItemText primary="Friends"></ListItemText>
-          </ListItemButton>
+          {pages.map((page) => (
+            <ListItemButton onClick={toggleDrawer}>
+              <ListItemIcon>
+                <OutlinedFlag />
+              </ListItemIcon>
+              <ListItemText primary={page}></ListItemText>
+            </ListItemButton>
+          ))}
         </List>
       </Drawer>
     </Box>
