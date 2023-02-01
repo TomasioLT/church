@@ -5,12 +5,12 @@
  `npm install gh-pages --save-dev`
 
  package.json:
+```
+ "homepage": "tomasiolt.github.io/application"
 
- `"homepage": "tomasiolt.github.io/application"`
+`"predeploy": ""npm run build"
 
- `"predeploy": ""npm run build"`
-
- `"homepage": ""gh-pages -d build"`
+ "homepage": ""gh-pages -d build"```
 
  `git init`
 
