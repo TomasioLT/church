@@ -2,29 +2,29 @@
 
 ## Prepare in VScode before commiting to Github.
 
-#### `npm install gh-pages --save-dev`
+ `npm install gh-pages --save-dev`
 
-#### package.json:
+ package.json:
 
-#### `"homepage": "tomasiolt.github.io/application"`
+ `"homepage": "tomasiolt.github.io/application"`
 
-#### `"predeploy": ""npm run build"`
+ `"predeploy": ""npm run build"`
 
-#### `"homepage": ""gh-pages -d build"`
+ `"homepage": ""gh-pages -d build"`
 
-#### `git init`
+ `git init`
 
-#### `git status`
+ `git status`
 
-#### `git add .`
+ `git add .`
 
-#### `git commit -m "initial commit"`
+ `git commit -m "initial commit"`
 
-#### `git branch -M main`
+ `git branch -M main`
 
-#### `git remote add origin https://github.com/TomasioLT/application.git`
+ `git remote add origin https://github.com/TomasioLT/application.git`
 
-#### `git push -u origin main`
+ `git push -u origin main`
 
 # Updating Github Pages // Re-Deploy.
 
