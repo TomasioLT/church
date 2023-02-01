@@ -7,11 +7,10 @@
  package.json:
 ```
  "homepage": "tomasiolt.github.io/application"
-scripts:{
-
-"predeploy": ""npm run build",
-
- "homepage": ""gh-pages -d build"}
+  scripts:{
+     "predeploy": ""npm run build",
+     "homepage": ""gh-pages -d build"
+     }
  ```
 
  `git init`
