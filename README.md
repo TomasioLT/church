@@ -13,24 +13,21 @@
      }
  ```
 
- `git init`
+ 1. `git init`
 
- `git status` 
+ 2. `git status` 
  
- `git add .`
+ 3. `git add .`
 
- `git commit -m "initial commit"`
+ 4. `git commit -m "initial commit"`
 
- `git branch -M main`
+5. `git branch -M main`
 
- `git remote add origin https://github.com/TomasioLT/application.git`
+6. `git remote add origin https://github.com/TomasioLT/application.git`
 
- `git push -u origin main`
+7. `git push -u origin main`
  
- 1. A numbered list
-              1. A nested numbered list
-              2. Which is numbered
-          2. Which is numbered
+ 
  
 # Updating Github Pages // Re-Deploy.
 
