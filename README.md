@@ -13,7 +13,7 @@
  "homepage": ""gh-pages -d build" 
  ```
 
- s`git init`
+ `git init`
 
  `git status`
 
