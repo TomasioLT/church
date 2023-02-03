@@ -47,7 +47,8 @@ const Home = () => {
           xs={12}
           alignItems="center"
           justifyContent="center"
-          display="flex">
+          display="flex"
+          sx={{ pl: 0 }}>
           {/* Image on background Box */}
           <Box
             alt="main photo"
@@ -57,7 +58,7 @@ const Home = () => {
               color: "#f5f5f5",
               backgroundSize: "cover",
               height: "450px",
-              width: { xs: "100%", md: "80%" },
+              width: { xs: "100%", md: "100%" },
               position: "relative",
               borderRadius: "10px",
             }}>
