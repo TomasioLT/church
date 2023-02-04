@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/church/static/css/main.a240c550.css",
-    "main.js": "/church/static/js/main.aa8c5ec4.js",
+    "main.js": "/church/static/js/main.802a4f40.js",
     "static/media/mountain.jpg": "/church/static/media/mountain.e69f5aa1cef9a51c26f7.jpg",
     "static/media/home-photo.jpg": "/church/static/media/home-photo.e4bc4942d2110fdbe818.jpg",
     "static/media/collage.webp": "/church/static/media/collage.35fa89fb16657966a4d1.webp",
     "static/media/site-logo.svg": "/church/static/media/site-logo.12ac03df3516a34487a823da119429c9.svg",
     "index.html": "/church/index.html",
     "main.a240c550.css.map": "/church/static/css/main.a240c550.css.map",
-    "main.aa8c5ec4.js.map": "/church/static/js/main.aa8c5ec4.js.map"
+    "main.802a4f40.js.map": "/church/static/js/main.802a4f40.js.map"
   },
   "entrypoints": [
     "static/css/main.a240c550.css",
-    "static/js/main.aa8c5ec4.js"
+    "static/js/main.802a4f40.js"
   ]
 }
