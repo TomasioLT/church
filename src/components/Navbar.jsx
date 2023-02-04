@@ -11,6 +11,7 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import siteLogo from "../assets/site-logo.svg";
+import { useTranslation } from "react-i18next";
 import {
   Drawer,
   List,
@@ -19,23 +20,23 @@ import {
   ListItemText,
 } from "@mui/material";
 import { ArrowRight, OutlinedFlag } from "@mui/icons-material";
-
 const siteWidth = {
   mobile: "90%",
   dekstop: "65%",
 };
-const pages = [
-  "Sermons",
-  "Locations",
-  "About",
-  "Get Involved",
-  "Store",
-  "Online",
-  "Giving",
-];
-const siteTitle = "Isgelbejimo Sviesa";
-
 function Navbar() {
+  const { t, i18n } = useTranslation();
+
+  const pages = [
+    t("navbar.sermons"),
+    t("navbar.locations"),
+    t("navbar.about"),
+    t("navbar.getInvolved"),
+    t("navbar.store"),
+    t("navbar.online"),
+    t("navbar.giving"),
+  ];
+  const siteTitle = "Isgelbejimo Sviesa";
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -58,7 +59,6 @@ function Navbar() {
   const handleClose = () => {
     setAnchorEl(null);
   };
-
   return (
     <Box
       sx={{
@@ -135,7 +135,7 @@ function Navbar() {
                 color="error"
                 sx={{ color: "white" }}
                 endIcon={<ChevronRightIcon />}>
-                EN
+                {i18n.language}
               </Button>
               {/* Languages */}
               <Menu
@@ -146,9 +146,27 @@ function Navbar() {
                 MenuListProps={{
                   "aria-labelledby": "basic-button",
                 }}>
-                <MenuItem onClick={handleClose}>English</MenuItem>
-                <MenuItem onClick={handleClose}>Lietuvių</MenuItem>
-                <MenuItem onClick={handleClose}>Русский</MenuItem>
+                <MenuItem
+                  onClick={() => {
+                    handleClose();
+                    i18n.changeLanguage("en");
+                  }}>
+                  English
+                </MenuItem>
+                <MenuItem
+                  onClick={() => {
+                    handleClose();
+                    i18n.changeLanguage("lt");
+                  }}>
+                  Lietuvių
+                </MenuItem>
+                <MenuItem
+                  onClick={() => {
+                    handleClose();
+                    i18n.changeLanguage("ru");
+                  }}>
+                  Русский
+                </MenuItem>
               </Menu>
             </Box>
           </Toolbar>

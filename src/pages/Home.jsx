@@ -29,7 +29,11 @@ import PeopleAltRoundedIcon from "@mui/icons-material/PeopleAltRounded";
 import mainPhoto from "../assets/home-photo.jpg";
 import imageMountain from "../assets/mountain.jpg";
 import imageCollage from "../assets/collage.webp";
+import { useTranslation } from "react-i18next";
+
 const Home = () => {
+  const { t, i18n } = useTranslation();
+
   return (
     <Box
       sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
@@ -73,16 +77,20 @@ const Home = () => {
                 m: 2,
               }}>
               <Chip
-                label="Latest sermon"
+                label={t("homepage.titlePicture.chip")}
                 sx={{ color: "white", backgroundColor: "grey" }}
               />
-              <Typography variant="h5">Don't Fight Your Future</Typography>
+              <Typography variant="h5">
+                {t("homepage.titlePicture.mainPictureTitle")}
+              </Typography>
               <Box sx={{ display: "flex", gap: "15px" }}>
-                <Button variant="contained">Watch Sermon</Button>
+                <Button variant="contained">
+                  {t("homepage.titlePicture.button1")}
+                </Button>
                 <Button
                   variant="outlined"
                   sx={{ color: "white", borderColor: "white" }}>
-                  View more Sermons
+                  {t("homepage.titlePicture.button2")}
                 </Button>
               </Box>
             </Box>
@@ -91,25 +99,29 @@ const Home = () => {
         {/* LEft */}
         <Grid container xs={12} md={8} direction="column" rowSpacing={3}>
           <Grid item xs={12}>
-            <Typography variant="h5">Let’s tailor your experience.</Typography>
+            <Typography variant="h5">
+              {t("homepage.experience.title")}
+            </Typography>
             <List>
               <ListItemButton>
                 <ListItemIcon>
                   <Person2Outlined />
                 </ListItemIcon>
-                <ListItemText primary="New here?" />
+                <ListItemText primary={t("homepage.experience.newHere")} />
               </ListItemButton>
               <ListItemButton>
                 <ListItemIcon>
                   <LocationCityOutlined />
                 </ListItemIcon>
-                <ListItemText primary="Im part of Efam" />
+                <ListItemText primary={t("homepage.experience.partEfam")} />
               </ListItemButton>
               <ListItemButton>
                 <ListItemIcon>
                   <LocationOnOutlinedIcon />
                 </ListItemIcon>
-                <ListItemText primary="Im already part of campus community" />
+                <ListItemText
+                  primary={t("homepage.experience.communityPart")}
+                />
               </ListItemButton>
             </List>
           </Grid>
@@ -137,13 +149,13 @@ const Home = () => {
                   m: 2,
                 }}>
                 <Typography variant="h5">
-                  A New eGroup Study from Holly Furtick
+                  {t("homepage.picture1.title")}
                 </Typography>
                 <Box sx={{ display: "flex", gap: "15px" }}>
                   <Button
                     variant="contained"
                     sx={{ color: "black", backgroundColor: "white" }}>
-                    Lear More
+                    {t("homepage.picture1.button1")}
                   </Button>
                 </Box>
               </Box>
@@ -172,15 +184,17 @@ const Home = () => {
                   bottom: 0,
                   m: 2,
                 }}>
-                <Typography variant="h4">This is church. Anywhere.</Typography>
+                <Typography variant="h4">
+                  {t("homepage.picture2.title")}
+                </Typography>
                 <Typography variant="h6">
-                  Join eFam all over the world for Elevation Church Online.
+                  {t("homepage.picture2.subtitle")}
                 </Typography>
                 <Box sx={{ display: "flex", gap: "15px" }}>
                   <Button
                     variant="contained"
                     sx={{ color: "black", backgroundColor: "white" }}>
-                    Watch Online
+                    {t("homepage.picture2.button1")}
                   </Button>
                 </Box>
               </Box>
@@ -190,9 +204,9 @@ const Home = () => {
         {/* Right */}
         <Grid container xs={12} md={4} rowSpacing={5}>
           <Grid item xs={12}>
-            <Typography variant="h6">Get Involved</Typography>
+            <Typography variant="h6">{t("homepage.involved.title")}</Typography>
             <Typography variant="body2">
-              See what God can do through you.
+              {t("homepage.involved.subtitle")}
             </Typography>
             <List>
               <Divider />
@@ -200,7 +214,7 @@ const Home = () => {
                 <ListItemIcon>
                   <VolunteerActivismOutlinedIcon />
                 </ListItemIcon>
-                <ListItemText primary="Giving" />
+                <ListItemText primary={t("homepage.involved.giving")} />
               </ListItemButton>
 
               <Divider />
@@ -208,7 +222,7 @@ const Home = () => {
                 <ListItemIcon>
                   <LocationCityOutlined />
                 </ListItemIcon>
-                <ListItemText primary="Groups" />
+                <ListItemText primary={t("homepage.involved.groups")} />
               </ListItemButton>
 
               <Divider />
@@ -216,7 +230,7 @@ const Home = () => {
                 <ListItemIcon>
                   <PeopleAltRoundedIcon />
                 </ListItemIcon>
-                <ListItemText primary="Volunteer" />
+                <ListItemText primary={t("homepage.involved.volunteer")} />
               </ListItemButton>
 
               <Divider />
@@ -224,7 +238,7 @@ const Home = () => {
                 <ListItemIcon>
                   <FavoriteBorderOutlined />
                 </ListItemIcon>
-                <ListItemText primary="Outreach" />
+                <ListItemText primary={t("homepage.involved.outreach")} />
               </ListItemButton>
 
               <Divider />
@@ -232,15 +246,15 @@ const Home = () => {
                 <ListItemIcon>
                   <LocationOnOutlinedIcon />
                 </ListItemIcon>
-                <ListItemText primary="eFam" />
+                <ListItemText primary={t("homepage.involved.efam")} />
               </ListItemButton>
               <Divider />
             </List>
           </Grid>
           <Grid item xs={12}>
-            <Typography variant="h6">For your Family</Typography>
+            <Typography variant="h6">{t("homepage.family.title")}</Typography>
             <Typography variant="body2">
-              See what God can do through your family.
+              {t("homepage.family.subtitle")}
             </Typography>
             <List>
               <Divider />
@@ -249,20 +263,20 @@ const Home = () => {
                 <ListItemIcon>
                   <VolunteerActivismOutlinedIcon />
                 </ListItemIcon>
-                <ListItemText primary="eKidz" />
+                <ListItemText primary={t("homepage.family.ekidz")} />
               </ListItemButton>
               <Divider />
               <ListItemButton>
                 <ListItemIcon>
                   <LocationCityOutlined />
                 </ListItemIcon>
-                <ListItemText primary="Elevation Youth" />
+                <ListItemText primary={t("homepage.family.youth")} />
               </ListItemButton>
               <Divider />
             </List>
           </Grid>
           <Grid item xs={12}>
-            <Typography variant="h6">Follow Elevation Church</Typography>
+            <Typography variant="h6">{t("homepage.church.title")}</Typography>
 
             <List>
               <Divider />
